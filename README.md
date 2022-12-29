@@ -24,41 +24,35 @@
 git clone https://github.com/drode1/api_yamdb.git
 ```
 
+Перейти в папку infra
 ```
-cd api_yamdb
-```
-
-Cоздать и активировать виртуальное окружение:
-
-```
-python -m venv venv
+cd /infra
 ```
 
-```
-. venv/bin/activate
-```
+Запустить docker-compose
 
 ```
-python -m pip install --upgrade pip
+docker-compose up
+```
+
+Выполнить миграции
+
+```
+docker-compose exec web python manage.py migrate       
+```
+
+Создать суперпользователя
+
+```
+docker-compose exec web python manage.py createsuperuser   
 ```    
 
-Установить зависимости из файла requirements.txt:
+Собрать статику
 
 ``` 
-pip install -r requirements.txt
+docker-compose exec web python manage.py collectstatic --no-input 
 ```   
 
-Выполнить миграции:
-
-```
-python manage.py migrate
-```       
-
-Запустить проект:
-
-```
-python manage.py runserver
-```
 
 ### Документация к API доступна по адресу
 
