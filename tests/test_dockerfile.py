@@ -1,13 +1,14 @@
 import os
 import re
 
-from django.conf import settings
+from api_yamdb import settings
 
 
 class TestDockerfile:
 
     def test_dockerfile(self):
         try:
+            print(settings.BASE_DIR)
             with open(f'{os.path.join(settings.BASE_DIR, "Dockerfile")}', 'r') as f:
                 dockerfile = f.read()
         except FileNotFoundError:
