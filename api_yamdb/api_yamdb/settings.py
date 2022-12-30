@@ -9,12 +9,11 @@ SECRET_KEY = os.getenv(
     'SECRET_KEY',
     default="p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs")
 
+
 DEBUG = False
 
-if DEBUG:
-    ALLOWED_HOSTS = ['*']
-else:
-    ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS', default='*')]
 
 # Application definition
 
@@ -103,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 

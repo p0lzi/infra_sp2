@@ -21,7 +21,7 @@
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
-git clone https://github.com/drode1/api_yamdb.git
+git clone https://github.com/p0lzi/api_yamdb.git
 ```
 
 Перейти в папку infra
